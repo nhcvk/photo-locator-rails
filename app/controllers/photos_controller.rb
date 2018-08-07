@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-    before_action :set_photo, only: [:show, :destroy]
+    before_action :set_photo, only: [:show, :update, :destroy]
     
     def index 
         @photos = Photo.all
@@ -16,6 +16,14 @@ class PhotosController < ApplicationController
             render_error
         end
     end
+
+    def update
+        if @photo.update(photo_params)
+          render :show
+        else
+          render_error
+        end
+      end
 
     def destroy
         @photo.destroy
