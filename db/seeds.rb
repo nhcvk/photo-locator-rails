@@ -53,3 +53,45 @@ mock = [
 Photo.create(mock)
 
 puts "#{mock.length} stories have been added"
+
+
+mockUser = [
+    {
+        open_id: "1"
+    },
+    {
+        open_id: "2"
+    },
+    {
+        open_id: "3"
+    }
+]
+
+User.create(mockUser)
+
+puts "#{mockUser.length} users have been added"
+
+
+
+mockBookmark = [
+    {
+        user_id: 1,
+        photo_id: 1
+    }, 
+    {
+        user_id: 2,
+        photo_id: 2
+    }, 
+    {
+        user_id: 2,
+        photo_id: 1
+    }, 
+    {
+        user_id: 2,
+        photo_id: 6
+    }
+]
+
+Bookmark.create(mockBookmark)
+
+puts "#{mockBookmark.length} bookmarks have been added"
