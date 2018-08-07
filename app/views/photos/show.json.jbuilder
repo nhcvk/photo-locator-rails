@@ -1,0 +1,1 @@
+json.extract! @photo, :id, :image_url, :description, :latitude, :longitude, :user_id
