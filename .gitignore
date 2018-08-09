@@ -22,3 +22,4 @@
 /config/master.key
 
 /app/controllers/login_controller.rb
+.env*
