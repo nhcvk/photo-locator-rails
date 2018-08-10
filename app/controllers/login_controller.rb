@@ -6,12 +6,20 @@ class LoginController < ApplicationController
       secret: "#{ENV['APP_SECRET']}",
       js_code: params[:code],
       grant_type: "authorization_code" }
+
   end
 
   def wechat_user
-    @wechat_response || = RestClient.post(URL, wechat_params)
+    # puts "wechat_params"
+    # puts wechat_params
+    # puts "Url"
+    # puts URL
 
-    @wechat_user || = JSON.parse(@wechat_repsonse.body)
+    res = RestClient.post(URL, wechat_params )
+
+    # puts "wechat_response"
+    # puts res.body
+    @wechat_user ||= JSON.parse(res.body)
   end
 
   def login
